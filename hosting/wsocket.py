@@ -36,4 +36,4 @@ def on_close(ws, close_status_code, close_msg):
 
 def run_stream():
     ws = websocket.WebSocketApp(url=futures_connection_url, on_open=on_open, on_message=on_message, on_error=on_error, on_close=on_close)
-    ws.run_forever(ping_interval=300)
+    ws.run_forever(ping_interval=300,ping_payload="Program is still live")
