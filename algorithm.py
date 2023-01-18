@@ -56,13 +56,13 @@ def algorithm(filledPrice, filledQuantity, filledPositionSide, filledStatus):
     prGreen("DONE...Set up new open order")
   # X REACH XMAX
   else:
-    print("\nReaching maximum order at order no." + str(globalVar.x))
-    if positionCount == 2:
+    globalVar.x += 1
+    if globalVar.x == globalVar.Xmax + 1:
       if filledPositionSide == "LONG":
         endLong()
       else:
         endShort()
-    if positionCount == 1:
+    if globalVar.x == globalVar.Xmax + 2:
       if filledPositionSide == "LONG":
         endFinalLong()
       else:
